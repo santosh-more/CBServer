@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-lg-8 col-sm-8 col-md-offset-2" ng-init="getArticleList()">
+    <!-- <a class="btn btn-sm pull-right" ui-sref="dashboard.addcat">Add Category</a> -->
+        <table class="table table-responsive table-bordered">
+            <thead>
+                <tr>
+                    <td>Sr.No</td>
+                    <td>Title</td>
+                    <td>Short Description</td>
+                    <td>Created On</td>
+                    <td>Written By</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="article in articleCat">
+                    <td>{{$index+1}}</td>
+                    <td>
+                    <a ui-sref="default.articles({article:article.title})" class="btn">{{article.title}}</a>
+                    </td>
+                    <td>{{article.shortDesc}}</td>
+                    <td>{{article.createdon.slice(0,10)}}</td>
+                    <td>{{article.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
